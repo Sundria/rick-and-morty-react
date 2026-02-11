@@ -13,18 +13,20 @@ function Card() {
   }, []);
 
   return (
-    <section className="grid grid-cols-4">
-      {personagens.map(personagem => (
-        <Cards
-          key={personagem.id}
-          name={personagem.name}
-          image={personagem.image}
-          status={personagem.status}
-          location={personagem.name}
-          species={personagem.species}
-        />
-      ))}
-    </section>
+    <div className="container mx-auto">
+      <section className="grid md:grid-cols-2 sm:grid-cols-1 gap-6 p-10">
+        {personagens.map((personagem) => (
+          <Cards
+            key={personagem.id}
+            name={personagem.name}
+            image={personagem.image}
+            status={personagem.status}
+            location={personagem.name}
+            species={personagem.species}
+          />
+        ))}
+      </section>
+    </div>
   );
 }
 
