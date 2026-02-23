@@ -5,7 +5,7 @@ import { GrGithub } from "react-icons/gr";
 
 export default function Footer({ count, episodes }) {
   return (
-    <footer className=" bg-neutral-500/10 py-10" id="about">
+    <footer className=" bg-neutral-500/10 py-10 px-3" id="about">
       <div className="container mx-auto flex flex-col gap-5">
         <div className="flex gap-8 items-center justify-center flex-wrap">
           <p className="text-gray-200/70">
