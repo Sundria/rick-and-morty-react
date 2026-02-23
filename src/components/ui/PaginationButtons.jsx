@@ -9,6 +9,7 @@ export default function PaginationButtons({
 }) {
   const handlePageChange = ({ selected }) => {
     setCurrentPage(selected);
+    window.scrollTo(0, 0);
   };
 
   const showNextButton = currentPage !== totalPages - 1;
