@@ -1,6 +1,6 @@
 import UseDatafetcher from "../services/Api";
 import { useState, useEffect } from "react";
-import  Cards  from "./Cards";
+import Cards from "./Cards";
 import PaginationButtons from "./ui/PaginationButtons";
 import CountPages from "./ui/CountPages";
 function Card() {
@@ -11,21 +11,25 @@ function Card() {
   useEffect(() => {
     setPersonagens(pages);
   }, [currentPage, pages]);
+  console.log(personagens);
 
   return (
     <div className="container mx-auto">
-      <section className="grid md:grid-cols-2 sm:grid-cols-1 gap-6 mx-5">
+      <section className="grid lg:grid-cols-2  max-sm:grid-cols-1 gap-6 mx-5">
         {loading ? (
           <div>Loading...</div>
         ) : (
           personagens.map((personagem) => (
             <Cards
               key={personagem.id}
+              url={personagem.url}
               name={personagem.name}
               image={personagem.image}
               status={personagem.status}
-              location={personagem.name}
+              location={personagem.location}
               species={personagem.species}
+              origin={personagem.origin}
+              gender={personagem.gender}
             />
           ))
         )}

@@ -12,10 +12,7 @@ function App() {
       <Header />
       <Hero />
       <Card />
-      <Footer count={count} episodes={episodes}/>
-      {/* 
-      <MainContent />
-      <Footer /> */}
+      <Footer count={count} episodes={episodes} />
     </>
   );
 }

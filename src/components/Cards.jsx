@@ -1,4 +1,16 @@
-function Cards({ name, image, status, location, species }) {
+import { BiQuestionMark } from "react-icons/bi";
+import { GiFemale, GiMale } from "react-icons/gi";
+
+function Cards({
+  url,
+  name,
+  image,
+  status,
+  location,
+  species,
+  origin,
+  gender,
+}) {
   const situation = (value) => {
     if (value === "Alive") {
       return "bg-green-500";
@@ -10,32 +22,67 @@ function Cards({ name, image, status, location, species }) {
   };
 
   return (
-    <article className="flex flex-row text-white gap-3 rounded-2xl bg-gray-800 overflow-hidden">
-      <div className="basis-1/3 max-w-1/3">
+    <article className="flex text-white md:gap-3 rounded-2xl bg-gray-800 overflow-hidden max-sm:flex-col inset-shadow-sm inset-shadow-teal-700/70">
+      <div className="basis-1/3 max-w-1/3 max-sm:max-w-full max-sm:h-3/5">
         <img
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover max-sm:object-cover"
           src={image}
           alt={`Imagem de ${name}`}
         />
       </div>
 
-      <section className="basis-2/3 max-w-2/3 p-3 gap-2">
-        <ul className="flex flex-col h-full justify-between">
+      <section className="basis-2/3 max-w-2/3 p-3 max-sm:h-2/5 max-sm:max-w-full max-sm:py-0">
+        <ul className="flex flex-col h-full justify-between max-sm:justify-evenly ">
           <li className="flex flex-col">
-            <h1 className="text-2xl font-bold">{name}</h1>
+            <h1 className="text-2xl font-bold font-poppins">
+              <a href={url} target="_blank" className="hover:text-red-400">
+                {name}
+              </a>
+            </h1>
             <div className="flex items-center gap-2">
               <div
-                className={`flex items-center justify-center w-2 h-2 rounded-full ${situation(status)}`}></div>
-              <p className="text-blue-100 capitalize">{status}</p>
+                className={`flex items-center justify-center w-2 h-2 rounded-full ${situation(status)}`}
+              ></div>
+              <p className="text-blue-100 capitalize">
+                {status} - {species}
+              </p>
             </div>
           </li>
           <li className="flex flex-col">
-            <strong>Última localização conhecida:</strong>
-            <span>{location}</span>
+            <p className="font-bold text-gray-400">Last known location:</p>
+            <a
+              href={location.url}
+              target="_blank"
+              className="text-sm hover:text-red-400"
+            >
+              {location.name}
+            </a>
           </li>
-          <li className="flex flex-col">
-            <strong>Espécie:</strong>
-            <span>{species}</span>
+          <li className="flex gap-10">
+            <div className="flex flex-col">
+              <p className="font-bold text-gray-400">Origin:</p>
+              <a
+                href={origin.url || "#"}
+                target={origin.url && "_blank"}
+                className="text-sm hover:text-red-400"
+              >
+                {origin.name}
+              </a>
+            </div>
+            <div className="flex flex-col">
+              <p className="font-bold text-gray-400">Gender:</p>
+              <span className="flex justify-center">
+                {gender === "Male" && (
+                  <GiMale className="text-blue-600 size-5" />
+                )}
+                {gender === "Female" && (
+                  <GiFemale className="text-pink-600 size-5" />
+                )}
+                {gender === "unknown" && (
+                  <BiQuestionMark className="text-yellow-500 size-5" />
+                )}
+              </span>
+            </div>
           </li>
         </ul>
       </section>

@@ -1,11 +1,7 @@
 @import "tailwindcss";
 
-body {
-  /* background: #031014; */
-  background: linear-gradient(
-    90deg,
-    rgba(3, 16, 20, 1) 0%,
-    rgba(14, 33, 38, 1) 42%,
-    rgba(0, 0, 0, 1) 100%
-  );
+@theme {
+  --font-poppins: "Poppins", sans-serif;
+  --my-green-gradient:
+    90deg, rgba(3, 16, 20, 1) 0%, rgba(14, 33, 38, 1) 42%, rgba(0, 0, 0, 1) 100%;
 }

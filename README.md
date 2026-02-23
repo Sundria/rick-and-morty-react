@@ -1,16 +1,67 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+```markdown
+# Rick and Morty App
 
-Currently, two official plugins are available:
+Uma aplicação web desenvolvida em React que consome a API do Rick and Morty para exibir informações sobre personagens, episódios e localizações da série.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Tecnologias Utilizadas
 
-## React Compiler
+- **React** - Biblioteca principal para construção da interface
+- **Vite** - Build tool e servidor de desenvolvimento
+- **Tailwind CSS** - Framework CSS para estilização
+- **Axios** - Cliente HTTP para requisições à API
+- **Framer Motion** - Biblioteca para animações
+- **React Icons** - Ícones para a interface
+- **React Paginate** - Componente para paginação
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 📁 Estrutura do Projeto
 
-## Expanding the ESLint configuration
+```
+src/
+├── components/     # Componentes React reutilizáveis
+├── services/       # Lógica de consumo da API
+└── App.jsx        # Componente principal da aplicação
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Como Executar
+
+1. Clone o repositório
+2. Instale as dependências:
+   ```bash
+   npm install
+   ```
+3. Inicie o servidor de desenvolvimento:
+   ```bash
+   npm run dev
+   ```
+
+## 📋 Scripts Disponíveis
+
+- `npm run dev` - Inicia o servidor de desenvolvimento
+- `npm run build` - Cria a versão de produção
+- `npm run preview` - Visualiza a versão de produção
+- `npm run lint` - Executa a verificação de código
+
+## 🎯 Funcionalidades
+
+- Listagem de personagens com paginação
+- Exibição de detalhes dos episódios
+- Interface responsiva e moderna
+- Animações suaves com Framer Motion
+
+## 📝 Desenvolvimento
+
+O projeto segue as melhores práticas de desenvolvimento React, com:
+- Componentes funcionais
+- Hooks personalizados para consumo de API
+- Configuração de ESLint para manter a qualidade do código
+- Estrutura modular e organizada
+
+## 📄 Licença
+
+MIT License - sinta-se à vontade para usar este projeto em seus próprios trabalhos!
+
+---
+
+Desenvolvido com ❤️ por mim, usando React e Tailwind CSS.
+```
