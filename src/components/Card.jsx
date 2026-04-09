@@ -15,9 +15,9 @@ function Card() {
 
   return (
     <div className="container mx-auto">
-      <section className="grid lg:grid-cols-2  max-sm:grid-cols-1 gap-6 mx-5">
+      <section className={loading ? "flex items-center justify-center my-10" : "grid lg:grid-cols-2  max-sm:grid-cols-1 gap-6 mx-5"}>
         {loading ? (
-          <div>Loading...</div>
+          <div className="text-white text-center">Something went wrong.</div>
         ) : (
           personagens.map((personagem) => (
             <Cards

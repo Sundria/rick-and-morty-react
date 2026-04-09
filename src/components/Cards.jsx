@@ -51,8 +51,10 @@ function Cards({
           <li className="flex flex-col">
             <p className="font-bold text-gray-400">Last known location:</p>
             <a
-              href={location.url}
-              target="_blank"
+              
+              href={location.url || "#"}
+              target={location?.url && "_blank"}
+              rel={location?.url ? "noreferrer noopener" : undefined}
               className="text-sm hover:text-red-400"
             >
               {location.name}
@@ -63,7 +65,8 @@ function Cards({
               <p className="font-bold text-gray-400">Origin:</p>
               <a
                 href={origin.url || "#"}
-                target={origin.url && "_blank"}
+                target={origin?.url && "_blank"}
+                rel={origin?.url ? "noreferrer noopener" : undefined}
                 className="text-sm hover:text-red-400"
               >
                 {origin.name}
@@ -91,5 +94,3 @@ function Cards({
 }
 
 export default Cards;
-
-
