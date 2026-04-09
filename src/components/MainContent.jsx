@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import Cards from "./Cards";
 import PaginationButtons from "./ui/PaginationButtons";
 import CountPages from "./ui/CountPages";
-function Card() {
+function MainContent() {
   const { loading, pages, totalPages, currentPage, setCurrentPage } =
     UseDatafetcher();
   const [personagens, setPersonagens] = useState([]);
@@ -11,7 +11,6 @@ function Card() {
   useEffect(() => {
     setPersonagens(pages);
   }, [currentPage, pages]);
-  console.log(personagens);
 
   return (
     <div className="container mx-auto">
@@ -44,4 +43,4 @@ function Card() {
   );
 }
 
-export default Card;
+export default MainContent;
