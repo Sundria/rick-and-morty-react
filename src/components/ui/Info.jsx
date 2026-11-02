@@ -13,7 +13,7 @@ export default function Info() {
         <ImInfo />
       </button>
 
-      <div className={`absolute right-0 mt-2 w-48 bg-gray-600 rounded-lg shadow-lg ${isOpen ? "opacity-0 invisible" : ""} group-hover:opacity-100 group-hover:visible transition-all duration-200 z-10 p-4`}>
+      <div className={`absolute right-0 mt-2 w-48 bg-gray-600 rounded-lg shadow-lg ${isOpen ? "" : "opacity-0 invisible"} group-hover:opacity-100 group-hover:visible transition-all duration-200 z-10 p-4`}>
           <p className="text-white">
             This is a personal project created with the intention of improving
             understanding of React and how it works. I used the{" "}

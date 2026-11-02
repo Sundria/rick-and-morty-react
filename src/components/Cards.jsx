@@ -1,5 +1,7 @@
 import { BiQuestionMark } from "react-icons/bi";
+import { FaGenderless } from "react-icons/fa";
 import { GiFemale, GiMale } from "react-icons/gi";
+import { TbGenderGenderless } from "react-icons/tb";
 
 function Cards({
   url,
@@ -51,7 +53,6 @@ function Cards({
           <li className="flex flex-col">
             <p className="font-bold text-gray-400">Last known location:</p>
             <a
-              
               href={location.url || "#"}
               target={location?.url && "_blank"}
               rel={location?.url ? "noreferrer noopener" : undefined}
@@ -83,6 +84,9 @@ function Cards({
                 )}
                 {gender === "unknown" && (
                   <BiQuestionMark className="text-yellow-500 size-5" />
+                )}
+                {gender === "Genderless" && (
+                  <TbGenderGenderless className="text-violet-400 size-5" />
                 )}
               </span>
             </div>
